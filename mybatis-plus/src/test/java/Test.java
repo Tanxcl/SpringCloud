@@ -68,5 +68,6 @@ public class Test {
         log.fine("fine");
         log.finer("finer");
         log.finest("finest");
+        System.out.println("");
     }
 }
