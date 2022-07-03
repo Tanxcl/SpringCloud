@@ -10,10 +10,10 @@
 
     <artifactId>microservice-api</artifactId>
 
-    <groupId>org.example</groupId>
-    <artifactId>microservice-api</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+<!--    <groupId>org.example</groupId>-->
+<!--    <artifactId>microservice-api</artifactId>-->
+<!--    <packaging>pom</packaging>-->
+<!--    <version>1.0-SNAPSHOT</version>-->
 
     <dependencies>
         <!-- lombok -->
@@ -22,18 +22,25 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!-- mybatisPlus代码生成器-->
+        <!-- mybatisPlus代码生成器 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.4.1</version>
+            <version>3.4.0</version>
         </dependency>
 
-        <!-- mybatisPlus代码生成器默认引擎模板-->
+        <!-- mybatisPlus代码生成器默认引擎模板 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>1.7</version>
+        </dependency>
+
+        <!-- Mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
         </dependency>
     </dependencies>
 
