@@ -72,5 +72,6 @@ public class Test {
         System.out.println("222");
         System.out.println("masterBranch");
         System.out.println("secondBranch");
+        System.out.println("push to gitHub");
     }
 }
