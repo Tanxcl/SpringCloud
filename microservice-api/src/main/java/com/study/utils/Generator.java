@@ -2,13 +2,9 @@ package com.study.utils;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import org.apache.commons.lang.StringUtils;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @className: Genarator
@@ -40,7 +36,7 @@ public class Generator {
     private static final String[] fieldPrefix = {""};
 
     /* 导出的数据库名(可以一次性导入多个) */
-    private static final String[] tableName = {"sys_user","student"};
+    private static final String[] tableName = {"sys_user"};
 
     /* 模块名称 */
     private static final String moduleName = "temporary.";
@@ -49,7 +45,7 @@ public class Generator {
     private static final String isDel = "";
 
     /* 类注解信息 作者 */
-    private static final String author = "Txc";
+    private static final String author = "Orange_Code";
 
     /* 父级包名 */
     private static final String parentPackage = "com.study";
@@ -106,14 +102,14 @@ public class Generator {
         /* 策略配置 */
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig.setInclude(tableName);                               //需要导出的数据库表
-//        strategyConfig.setNaming(NamingStrategy.underline_to_camel);        //表名映射类名：下划线转化为首字母大写
+        strategyConfig.setNaming(NamingStrategy.underline_to_camel);        //表名映射类名：下划线转化为首字母大写
         strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel);  //字段映射属性名：下划线转化为首字母大写
         strategyConfig.setEntityLombokModel(true);                          //设置Lombok模式
 //        strategyConfig.setRestControllerStyle(true);                        //controller中自动生成@RestController注解
 //        strategyConfig.setControllerMappingHyphenStyle(false);              //controller中@RequestMapping驼峰转化为下划线 @RequestMapping("/sysUser") -> @RequestMapping("/sys-user")
         strategyConfig.setEntityTableFieldAnnotationEnable(true);           //是否生成实体时，生成字段注解
 //        strategyConfig.setInclude(tableName.toUpperCase().split(","));     //Oracle数据，表名一定要大写，且表名要对应创建的用户，否则不生成代码
-        strategyConfig.setTablePrefix(tablePrefix);                         //过滤数据库表明前缀
+//        strategyConfig.setTablePrefix(tablePrefix);                         //过滤数据库表明前缀
 //        strategyConfig.setFieldPrefix(fieldPrefix);                          //过滤字段名前缀
         strategyConfig.setSkipView(false);                                  //是否跳过视图
 //        strategyConfig.setEntitySerialVersionUID(true);             //实体是否生成 serialVersionUID

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @date: 2022/7/1 23:06
  **/
 @SpringBootApplication
-@MapperScan(basePackages = "com.study.dao")
+@MapperScan(basePackages = "com.study.business.mapper")
 public class MicroserviceDept8001 {
 
     public static void main(String[] args) {
