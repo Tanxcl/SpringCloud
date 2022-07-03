@@ -12,10 +12,11 @@
     <artifactId>microservice-dept-8001</artifactId>
 
     <dependencies>
+        <!-- 引入microservice-api模块内容-->
         <dependency>
-                <groupId>org.example</groupId>
-                <artifactId>microservice-api</artifactId>
-                <version>1.0-SNAPSHOT</version>
+            <groupId>org.example</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
 <!--
                 <scope>compile</scope>标签作用
                     compile：编译依赖范围（默认），使用此依赖范围对于编译、测试、运行三种 classpath 都有效，即在编译、测试和运行的时候都要使用该依赖jar包
@@ -24,43 +25,60 @@
                     runtime：运行时依赖范围，对于测试和运行classpath有效，但是在编译主代码时无效，典型的就是JDBC驱动实现(这个一般很少用到)
 -->
         </dependency>
+        <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
+        <!-- alibaba -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
         </dependency>
+
+        <!-- logback -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>1.2.11</version>
         </dependency>
+
+        <!-- mybatis-spring -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.4</version>
         </dependency>
+
+        <!-- springboot-start-jetty -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
             <version>2.7.0</version>
         </dependency>
+
+        <!-- springboot-start-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- springboot-start-test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>2.5.5</version>
         </dependency>
+
+        <!-- springloaded 热部署-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>springloaded</artifactId>
@@ -69,6 +87,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>

@@ -29,14 +29,14 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--      spring boot-->
+            <!-- spring boot-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>2.5.5</version>
             </dependency>
 
-            <!--      spring cloud Hoxton.SR1-->
+            <!-- spring cloud Hoxton.SR1-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependecies</artifactId>
@@ -45,7 +45,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!--      spring cloud alibaba -->
+            <!-- spring cloud alibaba -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -54,28 +54,28 @@
                 <scope>import</scope>
             </dependency>
 
-            <!--      mysql-->
+            <!-- mysql-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
 
-            <!--      druid-->
+            <!-- druid-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
             </dependency>
 
-            <!--      mybatis-->
+            <!-- mybatis-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot</artifactId>
                 <version>${mybatis.spring.boot.version}</version>
             </dependency>
 
-<!--            junit-->
+            <!-- junit -->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -83,21 +83,21 @@
                 <scope>test</scope>
             </dependency>
 
-<!--            log4j-->
+            <!-- log4j -->
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
 
-<!--            lombok-->
+            <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
 
-            <!--        热部署-->
+            <!-- 热部署-->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>springloaded</artifactId>
@@ -108,6 +108,7 @@
                 <artifactId>spring-boot-devtools</artifactId>
                 <version>2.2.12.RELEASE</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>
