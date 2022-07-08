@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.temporary.mapper.SysUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.study.temporary.entity.SysUser">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+        <result column="sex" property="sex" />
+        <result column="age" property="age" />
+        <result column="id_card" property="idCard" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="address" property="address" />
+        <result column="login_time" property="loginTime" />
+        <result column="is_del" property="isDel" />
+    </resultMap>
+
+    <select id="queryUser" parameterType="com.study.temporary.entity.SysUser">
+        select
+        from sys_user
+    </select>
+</mapper>
