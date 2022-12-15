@@ -1,5 +1,7 @@
 package com.study.common.utils;
 
+//import com.alibaba.druid.support.spring.stat.annotation.Stat;
+
 /**
  * @className: Result
  * @description: 统一返回结果
@@ -8,17 +10,10 @@ package com.study.common.utils;
  **/
 public class Result {
 
-
-    //成功
-    public static final int SUCCESS = 200;
-
-    //失败
-    public static final int ERROR = 500;
-
     /**
      * 状态码
      */
-    private Integer code;
+    private String code;
     /**
      * 消息
      */
@@ -32,23 +27,23 @@ public class Result {
 
     }
 
-    private Result(Integer code, String message) {
+    private Result(String code, String message) {
         super();
         this.code = code;
         this.message = message;
     }
 
-    private Result(Integer code, String message, Object data) {
+    private Result(String code, String message, Object data) {
         super();
         this.code = code;
         this.message = message;
         this.data = data;
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
     public String getMessage() {
@@ -69,7 +64,7 @@ public class Result {
      * @return Result
      */
     public static Result success(String message) {
-        return new Result(SUCCESS, message);
+        return new Result(StatusCode.CODE_SUCESS, message);
     }
 
     /**
@@ -77,16 +72,15 @@ public class Result {
      * @return Result
      */
     public static Result success(String message, Object data) {
-        return new Result(SUCCESS, message, data);
+        return new Result(StatusCode.CODE_SUCESS, message, data);
     }
-
 
     /**
      * 返回失败消息
      * @return Result
      */
     public static Result error(String message) {
-        return new Result(ERROR, message);
+        return new Result(StatusCode.CODE_FAIL, message);
     }
 
     /**
@@ -94,7 +88,7 @@ public class Result {
      * @return Result
      */
     public static Result error(String message, Object data) {
-        return new Result(ERROR, message,data);
+        return new Result(StatusCode.CODE_FAIL, message,data);
     }
 
 }

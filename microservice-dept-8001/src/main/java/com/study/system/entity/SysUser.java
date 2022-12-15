@@ -12,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Orange_Code
- * @since 2022-07-08
+ * @since 2022-07-09
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -76,10 +76,28 @@ public class SysUser implements Serializable {
     private String address;
 
     /**
+     * 所属部门
+     */
+    @TableField("dept_id")
+    private String deptId;
+
+    /**
      * 最后一次登录的时间
      */
     @TableField("login_time")
     private String loginTime;
+
+    /**
+     * 头像
+     */
+    @TableField("head_sculpture")
+    private String headSculpture;
+
+    /**
+     * 用户状态(1: 启用、0: 禁用)
+     */
+    @TableField("state")
+    private Integer state;
 
     /**
      * 是否删除(1: 未删除、0: 已删除)

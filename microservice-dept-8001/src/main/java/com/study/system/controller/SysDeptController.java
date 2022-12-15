@@ -1,6 +1,7 @@
 package com.study.system.controller;
 
 
+import com.study.common.utils.IpUtil;
 import com.study.common.utils.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,8 +24,7 @@ public class SysDeptController {
     @ResponseBody
     @RequestMapping("/addDept")
     public Result addDept(){
-
-        return Result.success("");
+        return Result.success("新增部门");
     }
 
     /* 删除部门 */

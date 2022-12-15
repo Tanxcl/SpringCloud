@@ -5,6 +5,8 @@ import com.study.system.entity.SysUserMenu;
 import com.study.system.mapper.SysUserMenuMapper;
 import com.study.system.service.SysUserMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +19,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysUserMenuServiceImpl extends ServiceImpl<SysUserMenuMapper, SysUserMenu> implements SysUserMenuService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SysUserMenuServiceImpl.class);
 
     @Override
     public Result addUserMenu() {

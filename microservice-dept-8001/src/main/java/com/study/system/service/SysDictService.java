@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -17,15 +19,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public interface SysDictService extends IService<SysDict> {
 
     /* 新增数据字典 */
-    Result addDict();
+    Result addDict(SysDict sysDict);
 
     /* 删除数据字典 */
-    Result delDict();
+    Result delDict(SysDict sysDict);
 
     /* 查询数据字典 */
-    Result queryDict();
+    List<SysDict> queryDict(SysDict sysDict);
 
     /* 修改数据字典 */
-    Result updateDict();
+    Result updateDict(SysDict sysDict);
 
 }

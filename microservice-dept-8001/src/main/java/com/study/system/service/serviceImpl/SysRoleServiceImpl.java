@@ -5,6 +5,8 @@ import com.study.system.entity.SysRole;
 import com.study.system.mapper.SysRoleMapper;
 import com.study.system.service.SysRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +19,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SysRoleServiceImpl.class);
 
     @Override
     public Result addRole() {

@@ -4,6 +4,8 @@ import com.study.system.entity.SysFile;
 import com.study.system.mapper.SysFileMapper;
 import com.study.system.service.SysFileService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +18,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysFileServiceImpl extends ServiceImpl<SysFileMapper, SysFile> implements SysFileService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SysFileServiceImpl.class);
 
 }

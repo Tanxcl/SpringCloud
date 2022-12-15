@@ -39,10 +39,10 @@ public class Generator {
     private static final String[] tableName = {"sys_user"};
 
     /* 模块名称 */
-    private static final String moduleName = "temporary.";
+    private static final String moduleName = "template.";
 
     /* 表中逻辑删除的字段 */
-    private static final String isDel = "";
+    private static final String isDel = "is_del";
 
     /* 类注解信息 作者 */
     private static final String author = "Orange_Code";
@@ -75,7 +75,7 @@ public class Generator {
         globalConfig.setOutputDir(outPutFileDir);   //文件输出位置
         globalConfig.setFileOverride(true);         //覆盖已生成文件
         globalConfig.setAuthor(author);             //作者名
-        globalConfig.setOpen(false);                //生成文件后，是否打开文件夹
+//        globalConfig.setOpen(true);                //生成文件后，是否打开文件夹
 //        globalConfig.setDateType(DateType.ONLY_DATE);//设置时间类型
         globalConfig.setBaseResultMap(true);        //在mapper.xml文件中添加实体类与数据库表对应的resultMap
 //        globalConfig.setEnableCache(true);          //是否开启二级缓存
@@ -106,7 +106,7 @@ public class Generator {
         strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel);  //字段映射属性名：下划线转化为首字母大写
         strategyConfig.setEntityLombokModel(true);                          //设置Lombok模式
 //        strategyConfig.setRestControllerStyle(true);                        //controller中自动生成@RestController注解
-//        strategyConfig.setControllerMappingHyphenStyle(false);              //controller中@RequestMapping驼峰转化为下划线 @RequestMapping("/sysUser") -> @RequestMapping("/sys-user")
+        strategyConfig.setControllerMappingHyphenStyle(false);              //controller中@RequestMapping驼峰转化为下划线 @RequestMapping("/sysUser") -> @RequestMapping("/sys-user")
         strategyConfig.setEntityTableFieldAnnotationEnable(true);           //是否生成实体时，生成字段注解
 //        strategyConfig.setInclude(tableName.toUpperCase().split(","));     //Oracle数据，表名一定要大写，且表名要对应创建的用户，否则不生成代码
 //        strategyConfig.setTablePrefix(tablePrefix);                         //过滤数据库表明前缀
@@ -114,7 +114,7 @@ public class Generator {
         strategyConfig.setSkipView(false);                                  //是否跳过视图
 //        strategyConfig.setEntitySerialVersionUID(true);             //实体是否生成 serialVersionUID
         strategyConfig.setEntityTableFieldAnnotationEnable(true);           //是否生成实体时，生成字段注解
-//        strategyConfig.setLogicDeleteFieldName(isDel);                    //逻辑删除的字段名
+        strategyConfig.setLogicDeleteFieldName(isDel);                    //逻辑删除的字段名
 
         AutoGenerator autoGenerator = new AutoGenerator();
         autoGenerator.setDataSource(dataSourceConfig);      //数据源配置

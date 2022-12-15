@@ -17,8 +17,5 @@
         <result column="is_del" property="isDel" />
     </resultMap>
 
-    <select id="queryUser" parameterType="com.study.temporary.entity.SysUser">
-        select
-        from sys_user
-    </select>
+
 </mapper>

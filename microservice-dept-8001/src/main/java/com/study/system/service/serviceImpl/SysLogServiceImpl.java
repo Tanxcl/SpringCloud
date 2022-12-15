@@ -4,6 +4,8 @@ import com.study.system.entity.SysLog;
 import com.study.system.mapper.SysLogMapper;
 import com.study.system.service.SysLogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +18,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements SysLogService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SysLogServiceImpl.class);
 
 }

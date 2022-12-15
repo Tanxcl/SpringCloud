@@ -3,16 +3,24 @@ package com.study.system.service.serviceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.study.system.entity.SysDept;
+import com.study.system.entity.SysRole;
 import com.study.system.entity.SysUser;
 
 
+import com.study.system.mapper.SysDeptMapper;
+import com.study.system.mapper.SysRoleMapper;
 import com.study.system.mapper.SysUserMapper;
 import com.study.system.service.SysUserService;
 import com.study.common.utils.DateUtil;
 import com.study.common.utils.Result;
-import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>
@@ -25,13 +33,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(SysUserServiceImpl.class);
+
     @Autowired
     private SysUserMapper sysUserMapper;
 
+    @Autowired
+    private SysRoleMapper sysRoleMapper;
 
+    @Autowired
+    private SysDeptMapper sysDeptMapper;
 
     @Override
     public Result login(SysUser sysUser) {
+/*
 
         //短信验证
 
@@ -53,18 +68,27 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         }
 
         //获取角色信息
-
+        QueryWrapper<SysRole> qwRole = new QueryWrapper<>();
+        qwRole.eq("user_id", user.getId());
+        List<SysRole> sysRoles = sysRoleMapper.selectList(qwRole);
 
         //获取权限菜单
 
         //获取部门信息
+        QueryWrapper<SysDept> qwDept = new QueryWrapper<>();
+        qwDept.eq("id", user.getDeptId());
+        List<SysDept> sysDepts = sysDeptMapper.selectList(qwDept);
 
         //记录日志
 
         //更新当前登录时间
         UpdateWrapper<Object> updateWrapper = new UpdateWrapper<>();
         updateWrapper.eq("id", user.getId())
-                .set("login_time", DateUtil.getCurrentDate());
+                .set("login_time", DateUtil.getCurrentDateTwo());
+
+        //响应到前端的数据
+        HashMap<String, Object> map = new HashMap<>();
+*/
 
         return Result.success("登录成功!");
     }
@@ -77,39 +101,37 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public Result addUser(SysUser sysUser) {
 
-        //判断用户信息是否符合录入要求
+        /*//判断用户信息是否符合录入要求
 
         if (sysUserMapper.insert(sysUser) != 1){
             return Result.error("新增用户失败!");
-        }
+        }*/
         return Result.success("成功新增用户!");
     }
 
     @Override
     public Result delUser(SysUser sysUser) {
 
-        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("name", sysUser.getName());
-        queryWrapper.eq("password", sysUser.getPassword());
-        queryWrapper.eq("is_del", "1");
-        SysUser user = sysUserMapper.selectOne(queryWrapper);
-        if (user == null){
-            return Result.error("!");
+        /*//查询用户是否存在
+        if (judgeUser(sysUser.getId())){
+            return Result.error("用户不存在，删除用户失败!!!");
         }
+
         //逻辑删除修改is_del
         UpdateWrapper<SysUser> updateWrapper = new UpdateWrapper<>();
-        updateWrapper.eq("id", user.getId())
-                .set("is_del", "0");
+        updateWrapper.eq("id", sysUser.getId())
+                .set("is_del", "1");
         int update = sysUserMapper.update(null, updateWrapper);
-
+*/
         return Result.success("成功删除用户信息!");
     }
 
     @Override
     public Result queryUser(SysUser sysUser) {
         //判断查询条件
-
-        return null;
+        /*List<SysUser> list = sysUserMapper.selectList(null);*/
+        /*return Result.success("", list);*/
+        return Result.success("");
     }
 
     @Override
@@ -121,9 +143,17 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     public Result resetPassword(SysUser sysUser) {
 
         //查询用户是否存在
-
+//        if (judgeUser(sysUser.getId())){
+//            return Result.error("用户不存在，设置密码!!!");
+//        }
         //修改密码
-
+        /*UpdateWrapper<SysUser> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.eq("id", sysUser.getId())
+                .set("password", sysUser.getPassword());
+        int update = sysUserMapper.update(null, updateWrapper);
+        if (update == 1){
+            return Result.error("重置密码失败!!!");
+        }*/
         return null;
     }
 
@@ -131,9 +161,29 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     public Result setPassword(SysUser sysUser) {
 
         //查询用户是否存在
-
+        /*if (judgeUser(sysUser.getId())){
+            return Result.error("用户不存在，设置密码!!!");
+        }
         //修改密码
-
+        UpdateWrapper<SysUser> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.eq("id", sysUser.getId())
+                .set("password", sysUser.getPassword());
+        int update = sysUserMapper.update(null, updateWrapper);
+        if (update == 1){
+            return Result.error("设置密码失败!!!");
+        }*/
         return null;
+    }
+
+    //查询用户是否存在
+    public boolean judgeUser(int userId){
+        /*QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id", userId)
+                .eq("is_del", "0");
+        SysUser user = sysUserMapper.selectOne(queryWrapper);
+        if (user == null){
+            return true;
+        }*/
+        return false;
     }
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Orange_Code
  * @since 2022-07-09
  */
-public interface SysDeptService extends IService<SysDept> {
+public interface SysDeptService {
 
     /* 新增部门 */
     Result addDept();

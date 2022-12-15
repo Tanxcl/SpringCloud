@@ -2,6 +2,7 @@ package com.study.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.study.system.entity.SysUser;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
