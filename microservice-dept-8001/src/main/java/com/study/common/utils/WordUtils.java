@@ -17,6 +17,19 @@ import java.util.Map;
  * @date: 2022/12/15 13:24
  **/
 public class WordUtils {
+
+    //获得数据，系统相关，就不展示了，下面写死一些数据为例
+    /*Map<String, Object> map = new HashMap<String, Object>();//将对象存入map中
+        map.put("meetingTitle","会议标题");
+        map.put("username","会议发起人");
+        map.put("takeParkIn","参会人员");
+        map.put("allSummary","概要");
+        map.put("duration","会议持续时间");
+        map.put("place","会议地点");
+        map.put("content","会议内容");
+
+        WordUtils.exportMillCertificateWord(request,response,map);*/
+
     //配置信息,代码本身写的还是很可读的,就不过多注解了
     private static Configuration configuration = null;
     //这里注意的是利用WordUtils的类加载器动态获得模板文件的位置

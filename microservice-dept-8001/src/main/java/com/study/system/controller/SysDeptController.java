@@ -2,7 +2,9 @@ package com.study.system.controller;
 
 
 import com.study.common.utils.IpUtil;
+import com.study.common.utils.RedisUtil;
 import com.study.common.utils.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -20,10 +22,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/sysDept")
 public class SysDeptController {
 
+    @Autowired
+    private RedisUtil redisUtil;
+
     /* 新增部门 */
     @ResponseBody
     @RequestMapping("/addDept")
     public Result addDept(){
+        redisUtil.set("name", "txc");
+        System.out.println(redisUtil.get("name"));
         return Result.success("新增部门");
     }
 

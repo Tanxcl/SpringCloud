@@ -34,7 +34,7 @@ public class SysUserController {
     public Result login(@RequestBody SysUser sysUser){
 
         Result result = sysUserService.login(sysUser);
-
+        System.out.println("Login------");
         return Result.success("", "");
     }
 
