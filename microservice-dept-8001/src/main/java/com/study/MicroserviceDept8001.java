@@ -19,7 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @date: 2022/7/1 23:06
  **/
 @SpringBootApplication
-@MapperScan(basePackages = "com.study.system.mapper")
+@MapperScan(basePackages = {"com.study.system.mapper","com.study.business.mapper"})
 @ServletComponentScan
 
 public class MicroserviceDept8001 {

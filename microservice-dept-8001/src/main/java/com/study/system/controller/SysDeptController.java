@@ -29,8 +29,16 @@ public class SysDeptController {
     @ResponseBody
     @RequestMapping("/addDept")
     public Result addDept(){
-        redisUtil.set("name", "txc");
-        System.out.println(redisUtil.get("name"));
+//        redisUtil.set("name", "txc");
+//        System.out.println(redisUtil.get("name"));
+        int a = 10;
+        for (int i = 0; i < 10; i++) {
+            c:for (int i1 = 0; i1 < 3; i1++) {
+                break c;
+            }
+        }
+        delDept();
+        System.out.println("1111");
         return Result.success("新增部门");
     }
 
@@ -38,7 +46,7 @@ public class SysDeptController {
     @ResponseBody
     @RequestMapping("/delDept")
     public Result delDept(){
-
+        System.out.println("22222");
         return Result.success("");
     }
 
