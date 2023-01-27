@@ -24,26 +24,6 @@ public class DataTestController {
     public String addData(){
         try{
             System.out.println("xxxxx");
-//            DataTest dataTest = new DataTest();
-//            Random random = new Random();
-//            for (int i = 0; i < 1000000; i++) {
-//                if (i%3==0){
-//                    dataTest.setName("王五"+random.nextInt(i+10));
-//                }else if(i%2==0){
-//                    dataTest.setName("小白"+random.nextInt(i+10));
-//                }else{
-//                    dataTest.setName("凶獒黑"+random.nextInt(i+10));
-//                }
-//                if (i%2==0){
-//                    dataTest.setSex("0");
-//                }else{
-//                    dataTest.setSex("1");
-//                }
-//                dataTest.setAddress("地址是"+dataTest.getName());
-//                dataTest.setPhone("1111111111");
-//                dataTest.setDel("0");
-//                dataTestMapper.insert(dataTest);
-//            }
         }catch (Exception e){
             e.printStackTrace();
             return "插入数据失败";
