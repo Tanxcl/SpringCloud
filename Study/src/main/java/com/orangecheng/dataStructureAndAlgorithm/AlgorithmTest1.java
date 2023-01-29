@@ -6,7 +6,7 @@ package com.orangecheng.dataStructureAndAlgorithm;
  * @author: Txc
  * @date: 2023/1/16 12:18
  **/
-public class AlgorithmTest {
+public class AlgorithmTest1 {
 
     public static void main(String[] args) {
 
