@@ -9,7 +9,7 @@ package com.study.leetcode;
 public class NO2293 {
 
     /**
-     * 给你一个下标从 0 开始的整数数组 nums ，其长度是 2 的幂。
+     * 给你一个下标从 0 开始的整数数组 nums ，其长度是 2 的幂。1
      *
      * 对 nums 执行下述算法：
      *
