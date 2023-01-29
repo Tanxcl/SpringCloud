@@ -18,6 +18,7 @@
         <module>microservice-api</module>
         <module>microservice-dept-8001</module>
         <module>Security</module>
+        <module>Study</module>
     </modules>
 
 

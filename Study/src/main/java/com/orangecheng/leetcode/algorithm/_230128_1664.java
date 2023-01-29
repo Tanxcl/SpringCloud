@@ -1,4 +1,4 @@
-package com.study.leetcode;
+package com.orangecheng.leetcode.algorithm;
 
 /**
  * @ClassName: NO1664
@@ -6,11 +6,11 @@ package com.study.leetcode;
  * @author: OrangeCheng
  * @create: 2023-01-28 21:31
  **/
-public class NO1664 {
+public class _230128_1664 {
 
     public static void main(String[] args) {
         int[] a = {};
-        NO1664 no1664 = new NO1664();
+        _230128_1664 no1664 = new _230128_1664();
         int i = no1664.waysToMakeFair(a);
         System.out.println(i);
     }

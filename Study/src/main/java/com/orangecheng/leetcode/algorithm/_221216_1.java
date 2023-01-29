@@ -1,4 +1,4 @@
-package com.study.leetcode;
+package com.orangecheng.leetcode.algorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @author: Txc
  * @date: 2022/12/16 11:32
  **/
-public class NO1 {
+public class _221216_1 {
     /**
      * 给定一个整数数组 nums和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
      *
@@ -24,7 +24,7 @@ public class NO1 {
      *
      */
     public static void main(String[] args){
-        int[] ints = NO1.twoSum(new int[]{3,2,4}, 6);
+        int[] ints = _221216_1.twoSum(new int[]{3,2,4}, 6);
         for (int anInt : ints) {
             System.out.println(anInt);
         }
