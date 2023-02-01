@@ -57,20 +57,6 @@ public class _230129_2315 {
                 }
             }
         }
-//        for (int i = 0; i < chars.length; i++) {
-//            if (chars[i] == '|'){
-//                flag = !flag;
-//                count += a;
-//                a = 0;
-//                continue;
-//            }else{
-//                if (!flag && chars[i] == '*'){  //判断是头|，还是尾|
-//                    a ++;
-//                }else{
-//                    continue;
-//                }
-//            }
-//        }
         return count;
     }
 
